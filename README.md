@@ -218,16 +218,42 @@ extension/
 
 ## 8. Chạy toàn bộ hệ thống
 
-Có thể chạy hệ thống theo thứ tự:
+Thực hiện lần lượt các bước sau để khởi chạy toàn bộ hệ thống.
 
 ### 1. Database
+
+Mở terminal:
 
 ```bash
 cd backend
 docker compose up -d
 ```
 
-### 2. Backend
+Kiểm tra container PostgreSQL:
+
+```bash
+docker ps
+```
+
+### 2. Seed dữ liệu ban đầu
+
+Sau khi database đã khởi động, chạy seed để tạo 3 domain mặc định:
+
+```bash
+npm run seed
+```
+
+Các domain được khởi tạo:
+
+* `vnexpress.net`
+* `dantri.com.vn`
+* `tuoitre.vn`
+
+Có thể sử dụng **DBeaver** để kiểm tra database và dữ liệu sau khi seed.
+
+### 3. Backend
+
+Mở terminal mới:
 
 ```bash
 cd backend
@@ -235,7 +261,19 @@ npm install
 npm run start:dev
 ```
 
-### 3. Frontend
+Backend chạy tại:
+
+```text
+http://localhost:3001
+```
+
+API prefix:
+
+```text
+/api
+```
+
+### 4. Frontend
 
 Mở terminal mới:
 
@@ -245,9 +283,15 @@ npm install
 npm run dev
 ```
 
-### 4. Chrome Extension
+Frontend chạy tại:
 
-Vào:
+```text
+http://localhost:3000
+```
+
+### 5. Chrome Extension
+
+Mở Chrome và truy cập:
 
 ```text
 chrome://extensions/
@@ -255,24 +299,21 @@ chrome://extensions/
 
 Sau đó:
 
-```text
-Developer mode
-→ Load unpacked
-→ Chọn thư mục extension/
-```
+1. Bật **Developer mode**.
+2. Chọn **Load unpacked**.
+3. Chọn thư mục `extension/`.
 
-## 9. Kiểm tra hoạt động
+### 6. Kiểm tra hệ thống
 
-Sau khi các thành phần được khởi chạy:
+Sau khi tất cả thành phần đã chạy:
 
 1. Mở Chrome.
 2. Truy cập một trong các website được hỗ trợ.
 3. Mở một bài báo.
-4. Extension thu thập thông tin bài báo.
-5. Extension ghi nhận các event trong quá trình đọc.
-6. Dữ liệu được gửi về Backend.
-7. Backend lưu dữ liệu vào PostgreSQL.
-8. Truy cập Dashboard để xem dữ liệu.
+4. Extension bắt đầu thu thập thông tin và tracking event.
+5. Dữ liệu được gửi về Backend.
+6. Backend lưu dữ liệu vào PostgreSQL.
+7. Mở Dashboard tại `http://localhost:3000` để kiểm tra dữ liệu.
 
 ### Website được hỗ trợ
 
