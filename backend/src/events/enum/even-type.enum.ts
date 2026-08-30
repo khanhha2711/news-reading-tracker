@@ -1,0 +1,6 @@
+export enum EventType {
+  PAGE_ENTER = 'PAGE_ENTER',
+  PAGE_ACTIVE = 'PAGE_ACTIVE',
+  PAGE_INACTIVE = 'PAGE_INACTIVE',
+  PAGE_LEAVE = 'PAGE_LEAVE',
+}
