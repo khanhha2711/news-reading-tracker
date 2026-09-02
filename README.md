@@ -326,10 +326,7 @@ Sau khi tất cả thành phần đã chạy:
 Các tài liệu mô tả chi tiết bài làm nằm trong thư mục `docs/`:
 
 * `solution.md` – Giải pháp cho các câu hỏi của đề bài.
-* `architecture.md` – Kiến trúc hệ thống.
-* `features.md` – Các chức năng đã hoàn thành.
-* `limitations.md` – Các chức năng chưa hoàn thành và hạn chế.
-* `technical-decisions.md` – Các quyết định kỹ thuật quan trọng.
+* `overview.md` – Tổng quan
 * `images/` – Hình ảnh kết quả.
 
 
